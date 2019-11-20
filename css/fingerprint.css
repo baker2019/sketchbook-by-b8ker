@@ -1,0 +1,113 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+	flex-direction: column;
+}
+#container {
+	position: relative;
+	transform: scale(1.25)
+}
+#container:hover {
+	cursor: pointer;
+}
+#container * {
+	position: absolute;
+	top: 0;
+	left: -25px
+}
+
+#Path-1,
+#Path-2,
+#Path-3,
+#Path-4,
+#Path-5 {
+	stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+/* 	animation-play-state: paused; */
+}
+.animate-path {
+	animation: 0.8s fingerprint_animation ease-in forwards;
+}
+.animate-path-delay {
+	animation: 0.8s fingerprint_animation ease-in forwards;
+	animation-delay: 0.1s
+	
+}
+#text {
+	margin-top: 100px;
+	transform: scale(1.23);
+/* 	animation-play-state: paused; */
+}
+.animate-text {
+	animation: 0.5s fadeout linear forwards;
+}
+#check {
+	animation-delay: 0.3s;
+}
+.animate-check {
+	animation: 0.5s check_animation linear forwards;
+}
+#checkmark {
+	position: absolute;
+	left: -5px;
+	top: 0px;
+}
+#Oval {
+	stroke-dasharray: 200px;
+	stroke-dashoffset: 200;
+	opacity: 0;
+	transform: rotate(-75deg);
+	transform-origin: 30px 30px;
+/* 	animation-play-state: paused; */
+}
+.animate-oval {
+	animation: 0.5s circle_animation 0.2s ease-in forwards;
+}
+@keyframes fingerprint_animation {
+	50% {
+		stroke-dashoffset: -100;
+	}
+	60% {
+		stroke-opacity: 0;
+	}
+	100% {
+		stroke-dashoffset: -200;
+		stroke-opacity: 0;
+	}
+}
+
+@keyframes fadeout {
+	60% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes circle_animation {
+	60% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		stroke-dasharray: 400px;
+		transform: rotate(40deg);
+	}
+}
+
+@keyframes check_animation {
+	0% {
+		stroke-dasharray: 126;
+		stroke-dashoffset: 126;
+		
+	}
+	100% {
+		stroke-dasharray: 45;
+		stroke-dashoffset: 94
+	}
+}
